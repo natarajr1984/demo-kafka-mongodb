@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "e627199d-8a71-4872-b4fc-6d450cb889f5",
+		"name": "Wipro Test Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save data - with null",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :null,\r\n\"year\" :null,\r\n\"count\":null,\r\n\"requestId\":null\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/saveDemo",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"saveDemo"
+					]
+				},
+				"description": "Sending Null data"
+			},
+			"response": []
+		},
+		{
+			"name": "save data - invalid data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :\"Natarajan\",\r\n\"year\" :\"dsafdasfdsa\",\r\n\"count\":\"dsafdsafds\",\r\n\"requestId\":160\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/saveDemo",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"saveDemo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save data - Invalid Count value ( 0-999)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :\"Natarajan\",\r\n\"year\" :2020,\r\n\"count\":1234,\r\n\"requestId\":160\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/saveDemo",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"saveDemo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save data - duplicate request ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :\"Natarajan\",\r\n\"year\" :2020,\r\n\"count\":12,\r\n\"requestId\":160\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/saveDemo",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"saveDemo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save data - valid data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :\"Natarajan\",\r\n\"year\" :2020,\r\n\"count\":12,\r\n\"requestId\":161\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/saveDemo",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"saveDemo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data by Batch ID - invalid Batch ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/getDemoData/9HtjZKw",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"getDemoData",
+						"9HtjZKw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get data by Batch ID - valid Batch ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/getDemoData/T3QgaKRm0E",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"getDemoData",
+						"T3QgaKRm0E"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
